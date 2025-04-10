@@ -1,10 +1,21 @@
-# MLOps Project: CI/CD and Automation
+# MLOps Project: CI/CD and Environment Configuration
+[![Docker Pulls](https://img.shields.io/docker/pulls/alamsaim/fakenews-model.svg)](https://hub.docker.com/r/alamsaim/fakenews-model)
 
 This MLOps project demonstrates how to:
 - Automate environment setup using **Ansible**
 - Containerize machine learning code using **Docker**
 - Enable easy cloud-based development via **GitHub Codespaces**
 - Integrate a **CI/CD pipeline using GitHub Actions**
+
+---
+
+Tasks:
+i. Create Ansible playbooks to install required packages and setup ML environments.
+ii. Dockerize ML training scripts (with necessary dependencies).
+
+Deliverables:
+i. Playbooks for local/remote setup.
+ii. Dockerfile and working Docker images.
 
 ---
 
@@ -49,6 +60,21 @@ Pipeline:
 
 To see logs and results:
 Go to the “Actions” tab on GitHub repo. Then, Click the latest workflow run.
+
+---
+
+## Pre-Built Docker Image (via DockerHub)
+This Docker image contains all code and dependencies to train the fake news classifier.
+Image name:
+alamsaim/fakenews-model:latest
+
+Pull and run:
+```bash
+docker pull alamsaim/fakenews-model:latest
+# Run and mount output directory
+docker run --rm -v $(pwd)/output:/opt/ml/output alamsaim/fakenews-model:latest
+```
+Outputs saved to: ./output/model.pkl and vectorizer.pkl
 
 ---
 
