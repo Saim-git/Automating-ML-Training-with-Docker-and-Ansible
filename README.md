@@ -15,7 +15,6 @@ A machine learning model is trained using **TF-IDF + PassiveAggressiveClassifier
 ---
 
 ## Local Setup (Ansible + Docker)
-
 > Pre-requisites: Python, Docker, and Ansible installed.
 
 ```bash
@@ -23,16 +22,16 @@ cd ansible
 ansible-playbook playbook-local.yml
 ```
 This will:
-i. Install Python and Docker
-ii. Copy your code to /opt/ml/
-iii. Build and run the Docker container
-
----
-
+ i. Install Python and Docker
+ ii. Copy your code to /opt/ml/
+ iii. Build and run the Docker container
+ 
+ ---
+ 
 ##  GitHub Codespaces (Zero Install Setup)
 Click the green “Code” button → “Open with Codespaces”. The dev container will auto-install Python, Docker, Ansible
 To run:
-  ```bash
+```bash
 ansible-playbook ansible/playbook-remote.yml
 ```
 This builds the Docker image and runs training inside /opt/ml/
@@ -58,5 +57,5 @@ Accuracy: 93.97%
 Confusion Matrix:
  [[583 42]
  [ 34 601]]
-📦 Model saved to /opt/ml/output/model.pkl
-📦 Vectorizer saved to /opt/ml/output/vectorizer.pkl
+ 📦 Model saved to /opt/ml/output/model.pkl
+ 📦 Vectorizer saved to /opt/ml/output/vectorizer.pkl
